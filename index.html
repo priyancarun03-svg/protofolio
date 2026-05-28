@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Priyanca's profile</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:white;
+    color:mediumorchid;
+}
+
+
+
+nav{
+    background:plum;
+    color:black;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    flex-wrap:wrap;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:lawngreen;
+}
+
+
+
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:mediumvioletred;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:whitesmoke;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:90px;
+}
+
+.hero p{
+    margin:20px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:white;
+    color:#2196f3;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:black;
+    color:white;
+}
+
+
+section{
+    padding:70px 10%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.box{
+    background:black;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:lavender;
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+}
+
+
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.project{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 10px black;
+}
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:4px;
+    }
+
+    .skills-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .project-container{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    .skills-container{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+
+    <h1>Priyanca A</h1>
+
+    <ul>
+        <li><a href="https://www.webronic.com/">Home</a></li>
+        <li><a href="https://www.srmist.edu.in/">About</a></li>
+        <li><a href="https://www.w3schools.com/">Skills</a></li>
+        <li><a href="https://priyancarun03-svg.github.io/htmlcssjs/">project</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <div>
+
+        <h2>welcom to my site</h2>
+
+        <h1>Priyanca</h1>
+
+        <p>
+            Beginner Front-End Developer
+        </p>
+
+        <a href="#" class="btn">Contact Me</a>
+
+    </div>
+
+</section>
+</body>
+</html>
