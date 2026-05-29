@@ -10,19 +10,19 @@ html{
 }
 
 body{
-    background:#0f172a;
+    background:palevioletred;
     color:white;
     line-height:1.6;
 }
 
-/* NAVBAR */
+
 
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:20px 10%;
-    background:#111827;
+    background:black;
     position:sticky;
     top:0;
     z-index:1000;
@@ -31,7 +31,7 @@ nav{
 .logo{
     font-size:28px;
     font-weight:bold;
-    color:#38bdf8;
+    color:pink;
 }
 
 nav ul{
@@ -42,28 +42,36 @@ nav ul{
 
 nav ul li a{
     text-decoration:none;
-    color:white;
+    color:pink;
     transition:0.3s;
 }
 
-nav ul li a:hover{
-    color:#38bdf8;
+nav ul li a:hover,
+nav ul li a.active{
+    color:plum;
 }
 
-/* HERO SECTION */
+
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
 
 .hero{
     min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
     padding:50px 10%;
 }
 
 .hero-container{
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
     gap:50px;
     width:100%;
 }
@@ -73,7 +81,7 @@ nav ul li a:hover{
 }
 
 .hero-text h3{
-    color:#38bdf8;
+    color:black;
     margin-bottom:10px;
 }
 
@@ -83,23 +91,21 @@ nav ul li a:hover{
 }
 
 .hero-text p{
-    max-width:600px;
-    color:#cbd5e1;
+    color:paleturquoise;
     margin-bottom:25px;
 }
 
-/* BUTTON */
+
 
 .btn{
     display:inline-block;
     padding:12px 28px;
-    background:#38bdf8;
+    background:plum;
     color:black;
     text-decoration:none;
     border-radius:10px;
     font-weight:bold;
-    transition:0.3s ease;
-    box-shadow:0 4px 15px rgba(56,189,248,0.4);
+    transition:0.3s;
 }
 
 .btn:hover{
@@ -107,22 +113,17 @@ nav ul li a:hover{
     transform:translateY(-3px);
 }
 
-/* HERO IMAGE */
 
-.hero-image{
-    flex:1;
-    text-align:center;
-}
 
 .hero-image img{
     width:300px;
     height:300px;
     object-fit:cover;
     border-radius:50%;
-    border:5px solid #38bdf8;
+    border:5px solid pink;
 }
 
-/* SECTION */
+
 
 section{
     padding:80px 10%;
@@ -132,19 +133,19 @@ section{
     text-align:center;
     font-size:40px;
     margin-bottom:50px;
-    color:#38bdf8;
+    color:black;
 }
 
-/* ABOUT */
+
 
 .about{
     text-align:center;
     max-width:900px;
     margin:auto;
-    color:#cbd5e1;
+    color:plum;
 }
 
-/* CARDS */
+
 
 .card-container{
     display:grid;
@@ -153,7 +154,7 @@ section{
 }
 
 .card{
-    background:#1e293b;
+    background:black;
     padding:30px;
     border-radius:15px;
     transition:0.3s;
@@ -164,15 +165,15 @@ section{
 }
 
 .card h3{
+    color:mediumvioletred;
     margin-bottom:15px;
-    color:#38bdf8;
 }
 
 .card p{
     margin-bottom:20px;
 }
 
-/* CONTACT */
+
 
 .contact{
     text-align:center;
@@ -183,45 +184,77 @@ section{
 }
 
 .contact a{
-    color:#38bdf8;
+    color:mediumvioletred;
     text-decoration:none;
 }
 
-/* FOOTER */
+
+
+.contact-form{
+    max-width:600px;
+    margin:40px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.contact-form textarea{
+    resize:none;
+}
+
+
 
 footer{
-    background:#111827;
+    background:plum;
     text-align:center;
     padding:20px;
     margin-top:40px;
-    color:#94a3b8;
+    color:plum;
 }
 
-/* RESPONSIVE */
+
 
 @media(max-width:900px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:80px;
+        right:10%;
+        background:mediumvioletred;
+        width:200px;
+        padding:20px;
+        border-radius:10px;
+    }
+
+    nav ul.show{
+        display:flex;
+    }
 
     .hero-container{
         flex-direction:column;
         text-align:center;
     }
 
-    .hero-text h1{
-        font-size:45px;
-    }
-
     .card-container{
         grid-template-columns:1fr;
     }
 
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
+    .hero-text h1{
+        font-size:45px;
     }
 }
 
