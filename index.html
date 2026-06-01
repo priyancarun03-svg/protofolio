@@ -304,30 +304,41 @@
             </p>
 
         </div>
+<form class="contact-form" id="contactForm">
 
+    <input
+    type="text"
+    id="name"
+    placeholder="Your Name">
+
+    <div id="nameError" class="error"></div>
+
+    <input
+    type="email"
+    id="email"
+    placeholder="Your Email">
+
+    <div id="emailError" class="error"></div>
+
+    <textarea
+    id="message"
+    rows="5"
+    placeholder="Your Message"></textarea>
+
+    <div id="messageError" class="error"></div>
+
+    <button
+    type="submit"
+    class="btn">
+        Submit
+    </button>
+
+</form>
+
+<div id="successMessage"></div>
         
 
-        <form class="contact-form">
-
-            <input type="text"
-            placeholder="Your Name"
-            required>
-
-            <input type="email"
-            placeholder="Your Email"
-            required>
-
-            <textarea
-            rows="5"
-            placeholder="Your Message"
-            required></textarea>
-
-           
-           <button type="submit" class="btn">
-            submit
-</button>
-
-        </form>
+        
 
     </section>
 
