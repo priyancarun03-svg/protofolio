@@ -1,165 +1,300 @@
-const menuToggle =
-document.getElementById("menu-toggle");
+// ======================
+// MOBILE MENU
+// ======================
 
-const navLinks =
-document.getElementById("nav-links");
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
-/* HAMBURGER MENU */
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 
-menuToggle.addEventListener("click", () => {
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+}
 
-    navLinks.classList.toggle("show");
+// ======================
+// DARK MODE
+// ======================
 
-});
+const darkBtn = document.getElementById("darkBtn");
 
-/* ACTIVE NAVIGATION */
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+}
 
-const sections =
-document.querySelectorAll("section");
+if (darkBtn) {
+  darkBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
 
-const navItems =
-document.querySelectorAll("nav ul li a");
+    if (document.documentElement.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
+}
+
+// ======================
+// SCROLL PROGRESS BAR
+// ======================
+
+const progressBar = document.getElementById("progress");
 
 window.addEventListener("scroll", () => {
+  if (!progressBar) return;
 
-    let current = "";
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
 
-    sections.forEach(section => {
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
 
-        const sectionTop =
-        section.offsetTop;
+  const percent = (scrollTop / scrollHeight) * 100;
 
-        if(window.pageYOffset >= sectionTop - 200){
-
-            current =
-            section.getAttribute("id");
-
-        }
-
-    });
-
-    navItems.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(
-            link.getAttribute("href")
-            === "#" + current
-        ){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
+  progressBar.style.width = percent + "%";
 });
 
-/* CONTACT FORM VALIDATION */
+// ======================
+// FADE ANIMATION
+// ======================
 
-const form =
-document.getElementById("contactForm");
+const fadeElements = document.querySelectorAll(".fade");
 
-const nameInput =
-document.getElementById("name");
+const fadeObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
 
-const emailInput =
-document.getElementById("email");
+fadeElements.forEach(el => fadeObserver.observe(el));
 
-const messageInput =
-document.getElementById("message");
+// ======================
+// TYPING EFFECT
+// ======================
 
-const nameError =
-document.getElementById("nameError");
+const typingElement = document.getElementById("typing");
 
-const emailError =
-document.getElementById("emailError");
+if (typingElement) {
+  const texts = [
+    "Front-End Developer",
+    "Cyber Security Student",
+    "UI Designer",
+    "Web Developer"
+  ];
 
-const messageError =
-document.getElementById("messageError");
+  let textIndex = 0;
+  let charIndex = 0;
 
-const successMessage =
-document.getElementById("successMessage");
+  function typeEffect() {
+    if (charIndex < texts[textIndex].length) {
+      typingElement.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeEffect, 100);
+    } else {
+      setTimeout(eraseEffect, 1500);
+    }
+  }
 
-form.addEventListener("submit", function(event){
+  function eraseEffect() {
+    if (charIndex > 0) {
+      typingElement.textContent =
+        texts[textIndex].substring(0, charIndex - 1);
 
-    event.preventDefault();
+      charIndex--;
+      setTimeout(eraseEffect, 50);
+    } else {
+      textIndex++;
 
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
-    successMessage.textContent = "";
+      if (textIndex >= texts.length) {
+        textIndex = 0;
+      }
 
-    let isValid = true;
+      setTimeout(typeEffect, 300);
+    }
+  }
 
-    /* NAME VALIDATION */
+  typeEffect();
+}
 
-    if(nameInput.value.trim() === ""){
+// ======================
+// FLOATING PROFILE IMAGE
+// ======================
 
-        nameError.textContent =
-        "Name is required.";
+const profileImage = document.querySelector(".profile-image");
 
-        isValid = false;
+if (profileImage) {
+  let position = 0;
+  let direction = 1;
 
+  setInterval(() => {
+    position += direction;
+
+    if (position > 10) direction = -1;
+    if (position < -10) direction = 1;
+
+    profileImage.style.transform =
+      `translateY(${position}px)`;
+  }, 50);
+}
+
+// ======================
+// SKILL CARD ANIMATION
+// ======================
+
+const skillCards = document.querySelectorAll(".skill-card");
+
+skillCards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-10px) scale(1.05)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0px) scale(1)";
+  });
+});
+
+// ======================
+// PROJECT CARD ANIMATION
+// ======================
+
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "scale(1.05)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "scale(1)";
+  });
+});
+
+// ======================
+// CONTACT FORM
+// ======================
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const email =
+      document.getElementById("email").value.trim();
+
+    const message =
+      document.getElementById("message").value.trim();
+
+    if (name.length < 3) {
+      alert("Enter valid name");
+      return;
     }
 
-    else if(
-        nameInput.value.trim().length < 2
-    ){
-
-        nameError.textContent =
-        "Name must be at least 2 characters.";
-
-        isValid = false;
-
+    if (!email.includes("@")) {
+      alert("Enter valid email");
+      return;
     }
 
-    /* EMAIL VALIDATION */
-
-    if(emailInput.value.trim() === ""){
-
-        emailError.textContent =
-        "Email is required.";
-
-        isValid = false;
-
+    if (message.length < 10) {
+      alert("Message too short");
+      return;
     }
 
-    else if(
-        !emailInput.value.includes("@")
-        ||
-        !emailInput.value.includes(".")
-    ){
+    const success =
+      document.getElementById("success");
 
-        emailError.textContent =
-        "Enter a valid email address.";
-
-        isValid = false;
-
+    if (success) {
+      success.innerHTML =
+        "✅ Message Sent Successfully!";
     }
 
-    /* MESSAGE VALIDATION */
+    contactForm.reset();
+  });
+}
 
-    if(messageInput.value.trim() === ""){
+// ======================
+// ACTIVE NAV LINK
+// ======================
 
-        messageError.textContent =
-        "Message is required.";
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
-        isValid = false;
+window.addEventListener("scroll", () => {
+  let current = "";
 
+  sections.forEach(section => {
+    const top = section.offsetTop - 150;
+
+    if (pageYOffset >= top) {
+      current = section.getAttribute("id");
     }
+  });
 
-    /* SUCCESS */
+  navLinks.forEach(link => {
+    link.classList.remove(
+      "text-pink-500",
+      "font-bold"
+    );
 
-    if(isValid){
-
-        form.style.display = "none";
-
-        successMessage.textContent =
-        "Thank you " +
-        nameInput.value +
-        "! Your message has been sent.";
-
+    if (
+      link.getAttribute("href") === "#" + current
+    ) {
+      link.classList.add(
+        "text-pink-500",
+        "font-bold"
+      );
     }
+  });
+});
 
+// ======================
+// BACK TO TOP BUTTON
+// ======================
+
+const topBtn = document.createElement("button");
+
+topBtn.innerHTML = "↑";
+
+topBtn.className =
+  "fixed bottom-5 right-5 bg-pink-500 text-white w-12 h-12 rounded-full shadow-lg hidden z-50";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    topBtn.classList.remove("hidden");
+  } else {
+    topBtn.classList.add("hidden");
+  }
+});
+
+topBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// ======================
+// PAGE LOADER
+// ======================
+
+window.addEventListener("load", () => {
+  document.body.style.opacity = "1";
 });

@@ -1,82 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Priyanca Portfolio</title>
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <script src="https://cdn.tailwindcss.com"></script>
 
-<script>
-tailwind.config = {
-  darkMode: 'class',
-  theme: {
-    extend: {
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif']
-      }
-    }
-  }
-}
-</script>
-
 <style>
-body{
-  font-family:'Poppins',sans-serif;
-}
-
-
-.glass{
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-}
-.dark .glass{
-  background: rgba(17,24,39,0.6);
-}
-
-
-.float {
-  animation: float 4s ease-in-out infinite;
-}
-@keyframes float {
-  0%{transform:translateY(0px)}
-  50%{transform:translateY(-10px)}
-  100%{transform:translateY(0px)}
-}
-
-
 .fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:all 0.8s ease;
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease;
 }
 .fade.show{
-  opacity:1;
-  transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 </style>
+
 </head>
+<body class="bg-pink-50 text-gray-800">
 
-<body class="bg-gradient-to-br from-pink-100 via-white to-pink-200 dark:from-gray-900 dark:via-gray-900 dark:to-black text-gray-900 dark:text-white">
-
-<div id="progress" class="fixed top-0 left-0 h-1 bg-pink-500 z-[9999]"></div>
-
-<!-- NAV -->
-<nav class="glass fixed top-0 w-full shadow z-50">
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full bg-white shadow z-50">
 <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-<h1 class="font-bold text-xl">Priyanca</h1>
+<h1 class="text-2xl font-bold text-pink-600">
+Priyanca
+</h1>
 
-<div class="flex items-center gap-3">
-<button id="darkToggle" class="px-3 py-1 rounded border">🌙</button>
-<button id="menuBtn" class="md:hidden text-2xl">☰</button>
+<div class="flex gap-3">
+
+<button id="darkBtn"
+class="px-3 py-1 border rounded">
+🌙
+</button>
+
+<button id="menuBtn"
+class="md:hidden text-3xl">
+☰
+</button>
+
 </div>
 
-<ul class="hidden md:flex gap-6 font-medium">
+<ul class="hidden md:flex gap-8 font-medium">
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -85,177 +54,259 @@ body{
 </ul>
 
 </div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu"
+class="hidden md:hidden bg-white border-t">
+
+<a href="#home" class="block p-4">Home</a>
+<a href="#about" class="block p-4">About</a>
+<a href="#skills" class="block p-4">Skills</a>
+<a href="#projects" class="block p-4">Projects</a>
+<a href="#contact" class="block p-4">Contact</a>
+
+</div>
+
 </nav>
 
+<!-- HERO -->
+<section id="home"
+class="min-h-screen flex items-center pt-20 fade">
 
-<section id="home" class="pt-28 max-w-6xl mx-auto px-6 fade">
-
-<div class="grid md:grid-cols-2 items-center gap-10">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
 <div>
-<h3 class="text-pink-500">Hello, I'm</h3>
-<h1 class="text-5xl font-bold">Priyanca A</h1>
 
-<p class="mt-4 text-gray-600 dark:text-gray-300">
-Front-End Developer | Cyber Security Student
+<h3 class="text-pink-500 text-xl">
+Hello, I'm
+</h3>
+
+<h1 class="text-5xl font-bold mt-2">
+Priyanca A
+</h1>
+
+<p class="mt-4 text-lg">
+Front-End Developer &
+Cyber Security Student
 </p>
+
+<div class="mt-6 flex gap-4">
 
 <a href="img/img 1.jpeg"
-class="inline-block mt-6 px-6 py-2 bg-pink-500 text-white rounded-xl hover:scale-105 transition shadow-lg">
+download
+class="bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700">
 Download Resume
 </a>
+
+<a href="#contact"
+class="border border-pink-600 px-6 py-3 rounded-lg hover:bg-pink-600 hover:text-white">
+contect
+</a>
+
 </div>
 
-<div class="flex justify-center float">
+</div>
+
+<div class="flex justify-center">
+
 <img src="img/img.jpeg"
-class="w-64 h-64 rounded-full shadow-2xl border-4 border-pink-300">
+alt="profile"
+class="w-72 h-72 rounded-full border-4 border-pink-400 shadow-xl">
+
 </div>
 
 </div>
 </section>
 
+<!-- ABOUT -->
+<section id="about"
+class="py-20 bg-white fade">
 
-<section class="py-20 px-6 text-center fade">
-<h2 class="text-3xl font-bold mb-4">About Me</h2>
+<div class="max-w-4xl mx-auto px-6 text-center">
 
-<p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-I am a Cyber Security student passionate about frontend development and modern UI design.
+<h2 class="text-4xl font-bold mb-6">
+About Me
+</h2>
+
+<p class="text-lg">
+I am a Cyber Security student passionate about
+Frontend Development, UI Design, and modern web technologies.
+I enjoy building responsive websites using HTML, CSS,
+JavaScript and Tailwind CSS.
 </p>
+
+</div>
+
 </section>
 
+<!-- SKILLS -->
+<section id="skills"
+class="py-20 fade">
 
-<section class="py-20 px-6 fade">
-<h2 class="text-3xl font-bold text-center mb-10">Skills</h2>
+<div class="max-w-6xl mx-auto px-6">
 
-<div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center mb-10">
+Skills
+</h2>
 
-<div class="p-6 rounded-2xl glass shadow hover:scale-105 transition">
+<div class="grid md:grid-cols-4 gap-6">
+
+<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
 HTML
 </div>
 
-<div class="p-6 rounded-2xl glass shadow hover:scale-105 transition">
-CSS / Tailwind
+<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+CSS
 </div>
 
-<div class="p-6 rounded-2xl glass shadow hover:scale-105 transition">
-GitHub
+<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+JavaScript
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+Tailwind CSS
+</div>
+
 </div>
 
 </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects"
+class="py-20 bg-white fade">
 
-<section class="py-20 px-6 fade">
-<h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+<div class="max-w-6xl mx-auto px-6">
 
-<div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold text-center mb-10">
+Projects
+</h2>
 
-<div class="p-6 rounded-2xl glass hover:scale-105 hover:shadow-xl transition">
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="shadow-lg rounded-xl p-6 hover:scale-105 duration-300">
+<h3 class="font-bold text-xl mb-3">
 Portfolio Website
+</h3>
+<p>
+Responsive portfolio built using Tailwind CSS.
+</p>
 </div>
 
-<div class="p-6 rounded-2xl glass hover:scale-105 hover:shadow-xl transition">
-Hotel UI
+<div class="shadow-lg rounded-xl p-6 hover:scale-105 duration-300">
+<h3 class="font-bold text-xl mb-3">
+Hotel Website
+</h3>
+<p>
+Modern hotel landing page using HTML CSS JS.
+</p>
 </div>
 
-<div class="p-6 rounded-2xl glass hover:scale-105 hover:shadow-xl transition">
+<div class="shadow-lg rounded-xl p-6 hover:scale-105 duration-300">
+<h3 class="font-bold text-xl mb-3">
 Learning Projects
+</h3>
+<p>
+Mini projects for practice and skill development.
+</p>
+</div>
+
 </div>
 
 </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact"
+class="py-20 fade">
 
-<section id="contact" class="py-20 px-6 fade">
-<h2 class="text-3xl font-bold text-center mb-10">Contact</h2>
+<div class="max-w-xl mx-auto px-6">
 
-<form id="contactForm" class="max-w-xl mx-auto space-y-4">
+<h2 class="text-4xl font-bold text-center mb-10">
+Contact Me
+</h2>
 
-<input id="name" placeholder="Name"
-class="w-full p-3 rounded-xl glass border">
+<form id="contactForm"
+class="space-y-4">
 
-<p id="nameError" class="text-red-500"></p>
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+class="w-full border p-3 rounded-lg">
 
-<input id="email" placeholder="Email"
-class="w-full p-3 rounded-xl glass border">
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+class="w-full border p-3 rounded-lg">
 
-<p id="emailError" class="text-red-500"></p>
+<textarea
+id="message"
+rows="5"
+placeholder="Message"
+class="w-full border p-3 rounded-lg"></textarea>
 
-<textarea id="message" rows="4" placeholder="Message"
-class="w-full p-3 rounded-xl glass border"></textarea>
+<button
+class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700">
 
-<p id="messageError" class="text-red-500"></p>
-
-<button class="w-full bg-pink-500 text-white py-3 rounded-xl hover:scale-105 transition">
 Send Message
+
 </button>
 
-<p id="success" class="text-green-500 text-center"></p>
+<p id="success"
+class="text-green-600 text-center"></p>
 
 </form>
+
+</div>
 </section>
 
-<footer class="text-center p-6 glass">
-© 2026 Priyanca
+<!-- FOOTER -->
+<footer class="bg-pink-600 text-white text-center p-6">
+© 2026 Priyanca Portfolio
 </footer>
-
 
 <script>
 
+// MOBILE MENU
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
 
-document.getElementById("darkToggle").onclick = () => {
-document.documentElement.classList.toggle("dark");
-};
+menuBtn.addEventListener("click",()=>{
+mobileMenu.classList.toggle("hidden");
+});
 
+// DARK MODE
+const darkBtn=document.getElementById("darkBtn");
 
-window.onscroll = () => {
-let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-let scrolled = (winScroll / height) * 100;
-document.getElementById("progress").style.width = scrolled + "%";
-};
+darkBtn.addEventListener("click",()=>{
+document.body.classList.toggle("bg-gray-900");
+document.body.classList.toggle("text-white");
+});
 
+// CONTACT FORM
+document.getElementById("contactForm")
+.addEventListener("submit",(e)=>{
 
-const elements = document.querySelectorAll(".fade");
+e.preventDefault();
 
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
+document.getElementById("success")
+.innerText="Message Sent Successfully!";
+});
+
+// SCROLL ANIMATION
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add("show");
 }
 });
 });
 
-elements.forEach(el => observer.observe(el));
-
-
-document.getElementById("contactForm").addEventListener("submit",(e)=>{
-e.preventDefault();
-
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let message=document.getElementById("message").value;
-
-let ok=true;
-
-if(name.length<3){
-document.getElementById("nameError").innerText="Name too short";
-ok=false;
-}else document.getElementById("nameError").innerText="";
-
-if(!email.includes("@")){
-document.getElementById("emailError").innerText="Invalid email";
-ok=false;
-}else document.getElementById("emailError").innerText="";
-
-if(message.length<10){
-document.getElementById("messageError").innerText="Message too short";
-ok=false;
-}else document.getElementById("messageError").innerText="";
-
-if(ok){
-document.getElementById("success").innerText="Message sent successfully!";
-}
+document.querySelectorAll(".fade")
+.forEach(el=>{
+observer.observe(el);
 });
 
 </script>
