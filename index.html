@@ -6,46 +6,76 @@
 
 <title>Priyanca Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 
+<script>
+tailwind.config = {
+  darkMode: 'class'
+}
+</script>
+
 <style>
+body{
+font-family:'Poppins',sans-serif;
+}
+
 .fade{
 opacity:0;
 transform:translateY(30px);
 transition:all .8s ease;
 }
+
 .fade.show{
 opacity:1;
 transform:translateY(0);
 }
+
+.float{
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
 </style>
-
 </head>
-<body class="bg-pink-50 text-gray-800">
 
-<!-- NAVBAR -->
-<nav class="fixed top-0 left-0 w-full bg-white shadow z-50">
+<body class="bg-pink-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+
+
+<div id="progress"
+class="fixed top-0 left-0 h-1 bg-pink-500 z-50"
+style="width:0%">
+</div>
+
+
+<nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow z-40">
+
 <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-<h1 class="text-2xl font-bold text-pink-600">
+<h1 class="text-2xl font-bold text-pink-500">
 Priyanca
 </h1>
 
-<div class="flex gap-3">
+<div class="flex items-center gap-3">
 
 <button id="darkBtn"
-class="px-3 py-1 border rounded">
+class="border px-3 py-1 rounded">
 🌙
 </button>
 
 <button id="menuBtn"
-class="md:hidden text-3xl">
+class="md:hidden text-2xl">
 ☰
 </button>
 
 </div>
 
-<ul class="hidden md:flex gap-8 font-medium">
+<ul class="hidden md:flex gap-8">
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -55,9 +85,8 @@ class="md:hidden text-3xl">
 
 </div>
 
-<!-- MOBILE MENU -->
 <div id="mobileMenu"
-class="hidden md:hidden bg-white border-t">
+class="hidden md:hidden bg-white dark:bg-gray-800 border-t">
 
 <a href="#home" class="block p-4">Home</a>
 <a href="#about" class="block p-4">About</a>
@@ -69,7 +98,7 @@ class="hidden md:hidden bg-white border-t">
 
 </nav>
 
-<!-- HERO -->
+
 <section id="home"
 class="min-h-screen flex items-center pt-20 fade">
 
@@ -78,7 +107,7 @@ class="min-h-screen flex items-center pt-20 fade">
 <div>
 
 <h3 class="text-pink-500 text-xl">
-Hello, I'm
+Hello I'm
 </h3>
 
 <h1 class="text-5xl font-bold mt-2">
@@ -86,21 +115,20 @@ Priyanca A
 </h1>
 
 <p class="mt-4 text-lg">
-Front-End Developer &
-Cyber Security Student
+<span id="typing"></span>
 </p>
 
 <div class="mt-6 flex gap-4">
 
 <a href="img/img 1.jpeg"
 download
-class="bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700">
+class="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600">
 Download Resume
 </a>
 
 <a href="#contact"
-class="border border-pink-600 px-6 py-3 rounded-lg hover:bg-pink-600 hover:text-white">
-contect
+class="border border-pink-500 px-6 py-3 rounded-lg hover:bg-pink-500 hover:text-white">
+Contact Me
 </a>
 
 </div>
@@ -109,37 +137,38 @@ contect
 
 <div class="flex justify-center">
 
-<img src="img/img.jpeg"
-alt="profile"
-class="w-72 h-72 rounded-full border-4 border-pink-400 shadow-xl">
+<img
+src="img/img.jpeg"
+alt="Profile"
+class="w-72 h-72 rounded-full border-4 border-pink-400 shadow-xl float">
 
 </div>
 
 </div>
+
 </section>
 
-<!-- ABOUT -->
-<section id="about"
-class="py-20 bg-white fade">
 
-<div class="max-w-4xl mx-auto px-6 text-center">
+<section id="about"
+class="py-20 bg-white dark:bg-gray-800 fade">
+
+<div class="max-w-4xl mx-auto text-center px-6">
 
 <h2 class="text-4xl font-bold mb-6">
 About Me
 </h2>
 
-<p class="text-lg">
+<p>
 I am a Cyber Security student passionate about
-Frontend Development, UI Design, and modern web technologies.
-I enjoy building responsive websites using HTML, CSS,
-JavaScript and Tailwind CSS.
+Frontend Development, Web Design and building
+modern responsive websites.
 </p>
 
 </div>
 
 </section>
 
-<!-- SKILLS -->
+
 <section id="skills"
 class="py-20 fade">
 
@@ -151,30 +180,31 @@ Skills
 
 <div class="grid md:grid-cols-4 gap-6">
 
-<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
 HTML
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
 CSS
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
 JavaScript
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow text-center hover:scale-105 duration-300">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:scale-105 transition">
 Tailwind CSS
 </div>
 
 </div>
 
 </div>
+
 </section>
 
-<!-- PROJECTS -->
+
 <section id="projects"
-class="py-20 bg-white fade">
+class="py-20 bg-white dark:bg-gray-800 fade">
 
 <div class="max-w-6xl mx-auto px-6">
 
@@ -184,39 +214,28 @@ Projects
 
 <div class="grid md:grid-cols-3 gap-6">
 
-<div class="shadow-lg rounded-xl p-6 hover:scale-105 duration-300">
-<h3 class="font-bold text-xl mb-3">
-Portfolio Website
-</h3>
-<p>
-Responsive portfolio built using Tailwind CSS.
-</p>
+<div class="p-6 rounded-xl shadow hover:scale-105 transition">
+<h3 class="font-bold mb-3">Portfolio Website</h3>
+<p>Responsive portfolio using Tailwind CSS.</p>
 </div>
 
-<div class="shadow-lg rounded-xl p-6 hover:scale-105 duration-300">
-<h3 class="font-bold text-xl mb-3">
-Hotel Website
-</h3>
-<p>
-Modern hotel landing page using HTML CSS JS.
-</p>
+<div class="p-6 rounded-xl shadow hover:scale-105 transition">
+<h3 class="font-bold mb-3">Hotel Website</h3>
+<p>Modern hotel landing page.</p>
 </div>
 
-<div class="shadow-lg rounded-xl p-6 hover:scale-105 duration-300">
-<h3 class="font-bold text-xl mb-3">
-Learning Projects
-</h3>
-<p>
-Mini projects for practice and skill development.
-</p>
+<div class="p-6 rounded-xl shadow hover:scale-105 transition">
+<h3 class="font-bold mb-3">Learning Projects</h3>
+<p>Frontend practice projects.</p>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
-<!-- CONTACT -->
+
 <section id="contact"
 class="py-20 fade">
 
@@ -226,87 +245,143 @@ class="py-20 fade">
 Contact Me
 </h2>
 
-<form id="contactForm"
-class="space-y-4">
+<form id="contactForm" class="space-y-4">
 
 <input
-type="text"
 id="name"
-placeholder="Your Name"
-class="w-full border p-3 rounded-lg">
+type="text"
+placeholder="Name"
+class="w-full p-3 border rounded-lg bg-white dark:bg-gray-800">
 
 <input
-type="email"
 id="email"
-placeholder="Your Email"
-class="w-full border p-3 rounded-lg">
+type="email"
+placeholder="Email"
+class="w-full p-3 border rounded-lg bg-white dark:bg-gray-800">
 
 <textarea
 id="message"
 rows="5"
 placeholder="Message"
-class="w-full border p-3 rounded-lg"></textarea>
+class="w-full p-3 border rounded-lg bg-white dark:bg-gray-800"></textarea>
 
 <button
-class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700">
+class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600">
 
 Send Message
 
 </button>
 
 <p id="success"
-class="text-green-600 text-center"></p>
+class="text-green-500 text-center">
+</p>
 
 </form>
 
 </div>
+
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-pink-600 text-white text-center p-6">
+<!-- Footer -->
+<footer class="bg-pink-500 text-white text-center p-5">
 © 2026 Priyanca Portfolio
 </footer>
 
 <script>
 
-// MOBILE MENU
-const menuBtn=document.getElementById("menuBtn");
-const mobileMenu=document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click",()=>{
-mobileMenu.classList.toggle("hidden");
+document.getElementById("darkBtn").addEventListener("click", () => {
+document.documentElement.classList.toggle("dark");
 });
 
-// DARK MODE
-const darkBtn=document.getElementById("darkBtn");
-
-darkBtn.addEventListener("click",()=>{
-document.body.classList.toggle("bg-gray-900");
-document.body.classList.toggle("text-white");
+// Mobile Menu
+document.getElementById("menuBtn").addEventListener("click", () => {
+document.getElementById("mobileMenu").classList.toggle("hidden");
 });
 
-// CONTACT FORM
-document.getElementById("contactForm")
-.addEventListener("submit",(e)=>{
+// Typing Effect
+const text = "Front-End Developer | Cyber Security Student";
+let i = 0;
 
-e.preventDefault();
+function typeWriter(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,80);
+}
+}
 
-document.getElementById("success")
-.innerText="Message Sent Successfully!";
+typeWriter();
+
+
+window.addEventListener("scroll", () => {
+
+let scrollTop =
+document.documentElement.scrollTop;
+
+let height =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+let percent =
+(scrollTop / height) * 100;
+
+document.getElementById("progress").style.width =
+percent + "%";
+
 });
 
-// SCROLL ANIMATION
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
 if(entry.isIntersecting){
 entry.target.classList.add("show");
 }
+
 });
+
 });
 
 document.querySelectorAll(".fade")
-.forEach(el=>{
-observer.observe(el);
+.forEach(el => observer.observe(el));
+
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name =
+document.getElementById("name").value;
+
+let email =
+document.getElementById("email").value;
+
+let message =
+document.getElementById("message").value;
+
+if(name.length < 3){
+alert("Enter valid name");
+return;
+}
+
+if(!email.includes("@")){
+alert("Enter valid email");
+return;
+}
+
+if(message.length < 10){
+alert("Message too short");
+return;
+}
+
+document.getElementById("success").innerText =
+"Message Sent Successfully!";
+
+this.reset();
+
 });
 
 </script>
