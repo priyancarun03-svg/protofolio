@@ -1,362 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Priyanca Portfolio</title>
 
-    <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-    content="Priyanca Portfolio Website">
-
-    <title>Priyanca Portfolio</title>
-
-    
-
-    <link rel="stylesheet" href="css/s1.css">
-
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
 </head>
 
-<body>
+<body class="bg-pink-50 text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
 
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
+    <h1 class="font-bold text-xl">Priyanca</h1>
 
-    <nav>
+    <div class="flex items-center gap-4">
+
+      <!-- Dark mode -->
+      <button id="darkToggle" class="px-3 py-1 border rounded">
+        🌙
+      </button>
+
+      <!-- Mobile menu -->
+      <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+
+    </div>
 
-        <h1 class="logo">Priyanca</h1>
+    <ul id="menu" class="hidden md:flex gap-6 font-medium">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-        
+  </div>
+</nav>
 
-        <div class="menu-toggle"
-        id="menu-toggle">
-            ☰
-        </div>
+<!-- HERO -->
+<section id="home" class="pt-28 max-w-6xl mx-auto px-6 fade">
 
-        <ul id="nav-links">
+  <div class="grid md:grid-cols-2 items-center gap-10">
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+    <div>
+      <h3 class="text-lg text-pink-500">Hello, I'm</h3>
+      <h1 class="text-4xl font-bold">Priyanca A</h1>
 
-            <li>
-                <a href="#about">About</a>
-            </li>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">
+        Beginner Front-End Developer & Cyber Security Student.
+        I build clean and responsive websites.
+      </p>
 
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
+      <a href="img/img 1.jpeg"
+         class="inline-block mt-6 bg-pink-500 text-white px-5 py-2 rounded-lg hover:scale-105 transition">
+        Download Resume
+      </a>
+    </div>
 
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
+    <div class="flex justify-center">
+      <img src="img/img.jpeg"
+           class="w-64 h-64 object-cover rounded-full shadow-lg hover:scale-105 transition"
+           alt="profile">
+    </div>
 
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
+  </div>
+</section>
 
-        </ul>
+<!-- ABOUT -->
+<section id="about" class="py-20 max-w-4xl mx-auto px-6 fade">
+  <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
 
-    </nav>
+  <p class="text-center text-gray-600 dark:text-gray-300">
+    I am pursuing B.Sc Cyber Security at SRM Institute.
+    I enjoy frontend development and modern UI design.
+  </p>
+</section>
 
-    
+<!-- SKILLS -->
+<section id="skills" class="py-20 px-6 fade">
+  <h2 class="text-3xl font-bold text-center mb-10">Skills</h2>
 
-    <section class="hero" id="home">
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-        <div class="hero-container">
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+      <h3 class="font-bold">HTML</h3>
+      <p class="text-gray-500 dark:text-gray-300">Structure building</p>
+    </div>
 
-            
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+      <h3 class="font-bold">CSS / Tailwind</h3>
+      <p class="text-gray-500 dark:text-gray-300">Responsive UI design</p>
+    </div>
 
-            <div class="hero-text">
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+      <h3 class="font-bold">GitHub</h3>
+      <p class="text-gray-500 dark:text-gray-300">Project deployment</p>
+    </div>
 
-                <h3>Hello, I'm</h3>
+  </div>
+</section>
 
-                <h1>Priyanca A</h1>
+<!-- PROJECTS -->
+<section id="projects" class="py-20 px-6 fade">
+  <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
 
-                <p>
-                    Beginner Front-End Developer &
-                    Cyber Security Student.
-                    Passionate about creating
-                    responsive and user-friendly
-                    websites using HTML and CSS.
-                </p>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-                <a href="img/img 1.jpeg"
-                class="btn">
-                    Download Resume
-                </a>
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+      <h3 class="font-bold">Portfolio Website</h3>
+      <p class="text-gray-500 dark:text-gray-300">Personal responsive portfolio</p>
+    </div>
 
-            </div>
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+      <h3 class="font-bold">Hotel UI</h3>
+      <p class="text-gray-500 dark:text-gray-300">Beginner UI design</p>
+    </div>
 
-            <!-- HERO IMAGE -->
+    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+      <h3 class="font-bold">Practice Work</h3>
+      <p class="text-gray-500 dark:text-gray-300">Learning frontend skills</p>
+    </div>
 
-            <div class="hero-image">
+  </div>
+</section>
 
-                <img src="img/img.jpeg"
-                alt="Priyanca">
+<!-- CONTACT -->
+<section id="contact" class="py-20 px-6 fade">
+  <h2 class="text-3xl font-bold text-center mb-10">Contact</h2>
 
-            </div>
+  <div class="max-w-xl mx-auto text-center space-y-2">
 
-        </div>
+    <p>Email: <span class="text-pink-500">priyancarun@gmail.com</span></p>
+    <p>Phone: +91 8925007944</p>
 
-    </section>
+    <p>GitHub:
+      <a class="text-pink-500" href="#">priyancarun03-svg</a>
+    </p>
 
-    
+  </div>
 
-    <section id="about">
+  <form class="max-w-xl mx-auto mt-10 space-y-4">
 
-        <h2 class="section-title">
-            About Me
-        </h2>
+    <input class="w-full p-3 border rounded dark:bg-gray-800" placeholder="Name">
+    <input class="w-full p-3 border rounded dark:bg-gray-800" placeholder="Email">
+    <textarea class="w-full p-3 border rounded dark:bg-gray-800" rows="4" placeholder="Message"></textarea>
 
-        <div class="about">
-
-            <p>
-                I am currently pursuing
-                B.Sc Cyber Security at
-                SRM Institute of Science
-                and Technology.
-                I am interested in frontend
-                web development and modern
-                UI design.
-            </p>
-
-        </div>
-
-    </section>
-
-    
-
-    <section id="skills">
-
-        <h2 class="section-title">
-            Skills
-        </h2>
-
-        <div class="card-container">
-
-            <div class="card">
-
-                <h3>HTML</h3>
-
-                <p>
-                    Building webpage structure
-                    and content.
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>CSS</h3>
-
-                <p>
-                    Designing responsive
-                    modern layouts.
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>GitHub</h3>
-
-                <p>
-                    Uploading and deploying
-                    projects online.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    
-
-    <section id="projects">
-
-        <h2 class="section-title">
-            Projects
-        </h2>
-
-        <div class="card-container">
-
-            <div class="card">
-
-                <h3>Portfolio Website</h3>
-
-                <p>
-                    Responsive personal
-                    portfolio using
-                    HTML and CSS.
-                </p>
-
-                <a href="#"
-                class="btn">
-                    View Project
-                </a>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Hotel Website UI</h3>
-
-                <p>
-                    Beginner hotel website
-                    with responsive design.
-                </p>
-
-                <a href="#"
-                class="btn">
-                    View Project
-                </a>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Learning Projects</h3>
-
-                <p>
-                    Improving frontend
-                    development skills.
-                </p>
-
-                <a href="#"
-                class="btn">
-                    View Project
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    
-
-    <section>
-
-        <h2 class="section-title">
-            Internship
-        </h2>
-
-        <div class="card-container">
-
-            <div class="card">
-
-                <h3>Webronics</h3>
-
-                <p>
-                    Learning frontend
-                    development workflow
-                    through internship.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    
-    <section id="contact">
-
-        <h2 class="section-title">
-            Contact
-        </h2>
-
-        <div class="contact">
-
-            <p>
-                Email:
-                <a href="mailto:priyancarun@gmail.com">
-                    priyancarun@gmail.com
-                </a>
-            </p>
-
-            <p>
-                Contact:
-                +91 8925007944
-            </p>
-
-            <p>
-                GitHub:
-                <a href="https://github.com/priyancarun03-svg"
-                target="_blank">
-
-                    priyancarun03-svg
-
-                </a>
-            </p>
-
-            <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com/in/arun-prinyanca-3214a4372"
-                target="_blank">
-
-                    LinkedIn profile 
-
-                </a>
-            </p>
-
-        </div>
-<form class="contact-form" id="contactForm">
-
-    <input
-    type="text"
-    id="name"
-    placeholder="Your Name">
-
-    <div id="nameError" class="error"></div>
-
-    <input
-    type="email"
-    id="email"
-    placeholder="Your Email">
-
-    <div id="emailError" class="error"></div>
-
-    <textarea
-    id="message"
-    rows="5"
-    placeholder="Your Message"></textarea>
-
-    <div id="messageError" class="error"></div>
-
-    <button
-    type="submit"
-    class="btn">
-        Submit
+    <button class="w-full bg-pink-500 text-white py-3 rounded hover:scale-105 transition">
+      Send
     </button>
 
-</form>
+  </form>
+</section>
 
-<div id="successMessage"></div>
-        
+<!-- FOOTER -->
+<footer class="text-center p-6 bg-white dark:bg-gray-800">
+  © 2026 Priyanca
+</footer>
 
-        
+<!-- SCRIPTS -->
+<script>
+  // mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
 
-    </section>
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
 
-    
+  // dark mode
+  const darkBtn = document.getElementById("darkToggle");
 
-    <footer>
+  darkBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+  });
 
-        <p>
-            © 2026 Priyanca A |
-            Portfolio Website
-        </p>
+  // scroll animation
+  const elements = document.querySelectorAll(".fade");
 
-    </footer>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("opacity-100", "translate-y-0");
+      }
+    });
+  });
 
-    
-
-    <script src="js/script.js"></script>
+  elements.forEach(el => {
+    el.classList.add("opacity-0", "translate-y-6", "transition-all", "duration-700");
+    observer.observe(el);
+  });
+</script>
 
 </body>
-
 </html>
